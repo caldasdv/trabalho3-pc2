@@ -1,0 +1,167 @@
+Aluno : David Osvaldo Caldas Pereira
+
+Parte 1
+
+Respostas: 
+
+1 - d
+2 - d
+3 - c
+4 - e
+5 - a
+6 - b
+7 - a
+8 - c
+
+Discursivas 
+
+1 - 
+
+public abstract class Cao {
+    private String nome;
+    private String raca;
+    private String identificacao;
+    private String porte;
+    
+    //gettes and setters
+    
+    public abstract double calcularEstadia(int dias);
+}
+
+public class CaoPolicial extends Cao {
+    private int tempoTreinamento;
+    private String especialidade;
+    
+    public double calcularEstadia(int dias) {
+        return dias * 10.0; // R$10,00 por dia
+    }
+}
+
+public class CaoEstimacao extends Cao {
+    private int numeroPessoasComQuemConvive;
+    
+    // getters e setters 
+    
+    @Override
+    public double calcularEstadia(int dias) {
+        double precoBase = 15.0; // R$15,00 por dia
+        double precoPorte = 0.0;
+
+        switch (getPorte()) {
+            case "pequeno":
+                precoPorte = 20.0;
+                break;
+            case "médio":
+                precoPorte = 30.0;
+                break;
+            case "grande":
+                precoPorte = 40.0;
+                break;
+        }
+        
+        return dias * (precoBase + precoPorte);
+    }
+}
+
+2 - 
+
+Exemplo1 exemplo = new Exemplo1("Descrição do Exemplo");
+
+3 - 
+
+public class Main {
+    public static void main(String[] args) {
+
+        Exemplo1 exemplo = new Exemplo1();
+        double resultado = exemplo.metodo1(9);
+        
+        System.out.println("O valor retornado é: " + resultado);
+    }
+}
+
+4 - 
+
+public class Poupanca {
+    private Integer numero;
+    private Double saldo;
+
+    public Poupanca(Integer numero, Double saldo) {
+        this.numero = numero;
+        this.saldo = saldo;
+    }
+
+    public double calculaJuro() {
+        return saldo * 0.065; 
+    }
+
+    public void atualizaSaldo() {
+        double juro = calculaJuro(); // Calcula o juro
+        saldo = saldo + juro;
+    }
+
+    // getters e setters
+}
+
+Parte 2
+
+Respostas: 
+
+1 - b
+2 - e
+3 - a
+4 - b
+5 - C
+6 - e
+7 - a
+8 - a
+
+Discursivas
+1 - 
+Exemplo1 objeto = new Exemplo1("Descrição do Exemplo");
+
+2 - 
+
+public abstract class Cao {
+    protected String raca;
+    protected String nome;
+    protected String identificacao;
+    protected String porte;
+    
+    public Cao(String raca, String nome, String identificacao, String porte) {
+        this.raca = raca;
+        this.nome = nome;
+        this.identificacao = identificacao;
+        this.porte = porte;
+    }
+    public abstract double calcularEstadia(int dias);
+}
+
+3 - 
+	
+public class Exemplo2 extends Exemplo1 {
+    
+    @Override
+    public double metodo1(int var1) {
+        return var1 * 2.0; // Exemplo de nova implementação
+    }
+}
+
+4 - 
+
+
+public class Main {
+    public static void main(String[] args) {
+        Proprietario proprietario = new Proprietario();
+        
+        proprietario.setNome("João Silva");
+        proprietario.setDataNascimento(new Data(1, 1, 1980));
+        proprietario.setNumeroFilho(2);
+        proprietario.setQtdeApartamento(3);
+        
+        double taxaDeposito = proprietario.calcularTaxaDeposito(5);
+        
+        System.out.println("A taxa de depósito para 5 volumes é: R$ " + taxaDeposito);
+    }
+}
+
+
